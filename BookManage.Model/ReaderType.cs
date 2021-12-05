@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BookManage.Model
+﻿namespace BookManage.Model
 {
     public class ReaderType
     {
@@ -27,7 +21,7 @@ namespace BookManage.Model
             this.CanLendDay = rt.CanLendDay;
             this.CanContinueTimes = rt.CanContinueTimes;
             this.PunishRate = rt.PunishRate;
-            this.DateValid = rt.DateValid;
+            this.DateVaild = rt.DateVaild;
         }
         public static string ColumnTitle(string columnName)
         {
