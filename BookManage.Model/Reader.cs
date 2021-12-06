@@ -28,7 +28,7 @@ namespace BookManage.Model
             this.rdSex = rt.rdSex;
             this.rdType = rt.rdType;
             this.rdDept = rt.rdDept;
-            this.rdphone = rt.rdphone;
+            this.rdPhone = rt.rdPhone;
             this.rdEmail = rt.rdEmail;
             this.rdDateReg = rt.rdDateReg;
             this.rdPhoto = rt.rdPhoto;
