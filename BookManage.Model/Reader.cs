@@ -37,6 +37,30 @@ namespace BookManage.Model
             this.rdPwd = rt.rdPwd;
             this.rdAdminRoles = rt.rdAdminRoles;
         }
+        public bool IsLoginAdmin()
+        {
+            return (rdStatus != "挂失");
+        }
+        public bool IsUserAdmin()
+        {
+            return (rdAdminRoles != 0);
+        }
+        public bool IsReaderAdmin()
+        {
+            return ((rdAdminRoles & 1) > 0);
+        }
+        public bool IsBookAdmin()
+        {
+            return ((rdAdminRoles & 2) > 0);
+        }
+        public bool IsBorrowAdmin()
+        {
+            return ((rdAdminRoles & 4) > 0);
+        }
+        public bool IsSystemAdmin()
+        {
+            return ((rdAdminRoles & 8) > 0);
+        }
         public static string ColumnTitle(string columnName)
         {
             string sTitle;

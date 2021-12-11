@@ -22,7 +22,13 @@ namespace BookManage
         public void InitMenu()
         {
             Reader reader = frmLogin.reader;
-            图书管理ToolStripMenuItem.Enabled = 
+            图书管理ToolStripMenuItem.Enabled = (reader.IsBookAdmin() && reader.IsLoginAdmin());
+            读者管理ToolStripMenuItem.Enabled = ((reader.IsReaderAdmin() | reader.IsSystemAdmin()) && reader.IsLoginAdmin());
+            借阅管理ToolStripMenuItem.Enabled = (reader.IsBorrowAdmin() && reader.IsLoginAdmin());
+            用户管理ToolStripMenuItem.Enabled = (reader.IsLoginAdmin());
+            授权管理ToolStripMenuItem.Enabled = (reader.IsSystemAdmin() && reader.IsLoginAdmin());
+
+            
         }
     }
 }
