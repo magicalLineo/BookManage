@@ -62,7 +62,7 @@ namespace BookManage.DAL
         }
         #endregion
 
-        private static string _strConnection = @"Data Source=localhost;Initial Catalog=BookLibrary;Integrated Security=True;";
+        private static string _strConnection = @"Data Source=localhost;Initial Catalog=Library;Integrated Security=True;";
         //private static string _strConnection =File.ReadAllText(@"..\..\ConnectionString.txt");
         //public string strConnection
         //{
@@ -83,7 +83,7 @@ namespace BookManage.DAL
                     conn.Open();
                 }
             }
-            catch
+            catch (Exception ex)
             {
                 throw new Exception("MS SQL Server数据库连接失败！");
             }
