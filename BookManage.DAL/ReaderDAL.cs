@@ -10,15 +10,15 @@ namespace BookManage.DAL
         public static int Insert(Reader reader)
         {
             int rows = 0;
-            string sql = "insert into Reader(rdID, rdName, rdSex, rdType, rdDapt, rdPhone, rdEmail, rdDateReg, rdPhoto, rdStatus, rdBorrowQty, rdPwd, rdAdminRoles) "
-                + "values (@rdID, @rdName, @rdSex, @rdTyoe, @rdDapt, @rdPhone, @rdEmail, @rdDateReg, @rdPhoto, @rdStatus, @rdBorrowQty, @rdPwd, @rdAdminRoles)";
+            string sql = "insert into Reader(rdID, rdName, rdSex, rdType, rdDept, rdPhone, rdEmail, rdDateReg, rdPhoto, rdStatus, rdBorrowQty, rdPwd, rdAdminRoles) "
+                + "values (@rdID, @rdName, @rdSex, @rdType, @rdDept, @rdPhone, @rdEmail, @rdDateReg, @rdPhoto, @rdStatus, @rdBorrowQty, @rdPwd, @rdAdminRoles)";
             SqlParameter[] parameters =
             {
                 new SqlParameter("@rdID", reader.rdID),
                 new SqlParameter("@rdName", reader.rdName),
                 new SqlParameter("@rdSex", reader.rdSex),
                 new SqlParameter("@rdType", reader.rdType),
-                new SqlParameter("@rdDapt", reader.rdDept),
+                new SqlParameter("@rdDept", reader.rdDept),
                 new SqlParameter("@rdPhone", reader.rdPhone),
                 new SqlParameter("@rdEmail", reader.rdEmail),
                 new SqlParameter("@rdDateReg", reader.rdDateReg),
@@ -47,7 +47,7 @@ namespace BookManage.DAL
                 + "rdName=@rdName, "
                 + "rdSex=@rdSex, "
                 + "rdType=@rdType, "
-                + "rdDapt=@rdDapt, "
+                + "rddept=@rddept, "
                 + "rdPhone=@rdPhone, "
                 + "rdEmail=@rdEmail, "
                 + "rdDateReg=@rdDateReg, "
@@ -63,7 +63,7 @@ namespace BookManage.DAL
                 new SqlParameter("@rdName", reader.rdName),
                 new SqlParameter("@rdSex", reader.rdSex),
                 new SqlParameter("@rdType", reader.rdType),
-                new SqlParameter("@rdDapt", reader.rdDept),
+                new SqlParameter("@rddept", reader.rdDept),
                 new SqlParameter("@rdPhone", reader.rdPhone),
                 new SqlParameter("@rdEmail", reader.rdEmail),
                 new SqlParameter("@rdDateReg", reader.rdDateReg),

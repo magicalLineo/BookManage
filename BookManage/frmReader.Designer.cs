@@ -48,6 +48,7 @@ namespace BookManage
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -78,7 +79,6 @@ namespace BookManage
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -170,6 +170,7 @@ namespace BookManage
             this.button6.TabIndex = 7;
             this.button6.Text = "退出";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -179,6 +180,7 @@ namespace BookManage
             this.button5.TabIndex = 6;
             this.button5.Text = "注销";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -188,6 +190,7 @@ namespace BookManage
             this.button4.TabIndex = 5;
             this.button4.Text = "解除挂失";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -197,6 +200,7 @@ namespace BookManage
             this.button3.TabIndex = 4;
             this.button3.Text = "挂失";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -206,6 +210,7 @@ namespace BookManage
             this.button2.TabIndex = 3;
             this.button2.Text = "变更借书证";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -215,6 +220,7 @@ namespace BookManage
             this.button1.TabIndex = 2;
             this.button1.Text = "办理借书证";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -234,6 +240,7 @@ namespace BookManage
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(522, 319);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // groupBox2
             // 
@@ -274,6 +281,13 @@ namespace BookManage
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "读者信息";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(66, 323);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(237, 21);
+            this.dateTimePicker1.TabIndex = 34;
             // 
             // comboBox3
             // 
@@ -317,6 +331,7 @@ namespace BookManage
             this.button11.TabIndex = 29;
             this.button11.Text = "返回";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button10
             // 
@@ -326,6 +341,7 @@ namespace BookManage
             this.button10.TabIndex = 28;
             this.button10.Text = "撤销";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button9
             // 
@@ -335,6 +351,7 @@ namespace BookManage
             this.button9.TabIndex = 27;
             this.button9.Text = "确认变更";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -344,6 +361,7 @@ namespace BookManage
             this.button8.TabIndex = 26;
             this.button8.Text = "确认办证";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
@@ -353,6 +371,7 @@ namespace BookManage
             this.button7.TabIndex = 25;
             this.button7.Text = "图片文件...";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // pictureBox1
             // 
@@ -525,13 +544,6 @@ namespace BookManage
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 0;
             this.label2.Text = "借书证号";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(66, 323);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(237, 21);
-            this.dateTimePicker1.TabIndex = 34;
             // 
             // frmReader
             // 
