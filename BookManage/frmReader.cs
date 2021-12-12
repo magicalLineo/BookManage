@@ -31,8 +31,8 @@ namespace BookManage
             dt = readerBLL.GetAllReaderType();
             foreach (DataRow dr in dt.Rows)
             {
-                cmbTypeForQry.Items.Add(dr["rdType"].ToString() + "--" + dr["rdTypeName"].ToString());
-                cmbType.Items.Add(dr["rdType"].ToString() + "--" + dr["rdTypeName"].ToString());
+                toolStripComboBox1.Items.Add(dr["rdType"].ToString() + "--" + dr["rdTypeName"].ToString());
+                comboBox2.Items.Add(dr["rdType"].ToString() + "--" + dr["rdTypeName"].ToString());
 
             }
 
@@ -42,10 +42,10 @@ namespace BookManage
         }
         private void ShowData()
         {
-            dgvReader.DataSource = dt;
+            dataGridView1.DataSource = dt;
             foreach (DataColumn dc in dt.Columns)
             {
-                dgvReader.Columns[dc.ColumnName].HeaderText = Reader.ColumnTitle(dc.ColumnName);
+                dataGridView1.Columns[dc.ColumnName].HeaderText = Reader.ColumnTitle(dc.ColumnName);
             }
         }
         private void SetStatus(opStatus opst)
@@ -62,15 +62,15 @@ namespace BookManage
                     toolStrip1.Enabled = false;
                     groupBox1.Enabled = false;
                     groupBox2.Enabled = true;
-                    btnAddReader.Enabled = true;
-                    btnUpdateReader.Enabled = false;
+                    button8.Enabled = true;
+                    button9.Enabled = false;
                     break;
                 case opStatus.inChange:
                     toolStrip1.Enabled = false;
                     groupBox1.Enabled = false;
                     groupBox2.Enabled = true;
-                    btnAddReader.Enabled = false;
-                    btnUpdateReader.Enabled = true;
+                    button8.Enabled = false;
+                    button9.Enabled = true;
                     break;
 
             }
@@ -78,43 +78,43 @@ namespace BookManage
 
         private void SetReaderToText()
         {
-            txtID.Text = Convert.ToString(reader.rdID);
-            txtName.Text = reader.rdName;
-            txtPwd.Text = reader.rdPwd;
-            cmbSex.Text = reader.rdSex;
-            cmbType.Text = Convert.ToString(reader.rdType);
-            cmbDept.Text = reader.rdDept;
-            txtPhone.Text = reader.rdPhone;
-            txtEmail.Text = reader.rdEmail;
-            dtpDateReg.Value = reader.rdDateReg;
+            textBox1.Text = Convert.ToString(reader.rdID);
+            textBox2.Text = reader.rdName;
+            textBox4.Text = reader.rdPwd;
+            comboBox1.Text = reader.rdSex;
+            comboBox2.Text = Convert.ToString(reader.rdType);
+            comboBox3.Text = reader.rdDept;
+            textBox11.Text = reader.rdPhone;
+            textBox10.Text = reader.rdEmail;
+            dateTimePicker1.Value = reader.rdDateReg;
 
-            txtStatus.Text = reader.rdStatus;
-            txtBorrowQty.Text = Convert.ToString(reader.rdBorrowQty);
-            txtAdminRoles.Text = Convert.ToString(reader.rdAdminRoles);
+            textBox5.Text = reader.rdStatus;
+            textBox6.Text = Convert.ToString(reader.rdBorrowQty);
+            comboBox2.Text = Convert.ToString(reader.rdAdminRoles);
         }
 
         private void SetTextToReader()
         {
-            reader.rdID = Convert.ToInt32(txtID.Text);
-            reader.rdName = txtName.Text;
-            reader.rdPwd = txtPwd.Text;
-            reader.rdSex = cmbSex.Text;
-            int i = cmbType.Text.IndexOf("--");
+            reader.rdID = Convert.ToInt32(textBox1.Text);
+            reader.rdName = textBox2.Text;
+            reader.rdPwd = textBox4.Text;
+            reader.rdSex = comboBox1.Text;
+            int i = comboBox2.Text.IndexOf("--");
             if (i > 0)
             {
-                reader.rdType = Convert.ToInt32(cmbType.Text.Substring(0, i));
+                reader.rdType = Convert.ToInt32(comboBox2.Text.Substring(0, i));
             }
             else
             {
-                reader.rdType = Convert.ToInt32(cmbType.Text);
+                reader.rdType = Convert.ToInt32(comboBox2.Text);
             }
-            reader.rdDept = cmbDept.Text;
-            reader.rdPhone = txtPhone.Text;
-            reader.rdEmail = txtEmail.Text;
-            reader.rdDateReg = dtpDateReg.Value;
-            reader.rdStatus = txtStatus.Text;
-            reader.rdBorrowQty = Convert.ToInt32(txtBorrowQty.Text);
-            reader.rdAdminRoles = Convert.ToInt32(txtAdminRoles.Text);
+            reader.rdDept = comboBox3.Text;
+            reader.rdPhone = textBox11.Text;
+            reader.rdEmail = textBox10.Text;
+            reader.rdDateReg = dateTimePicker1.Value;
+            reader.rdStatus = textBox5.Text;
+            reader.rdBorrowQty = Convert.ToInt32(textBox6.Text);
+            reader.rdAdminRoles = Convert.ToInt32(comboBox2.Text);
         }
 
         private void btnNewDoc_Click(object sender, EventArgs e)
@@ -131,7 +131,7 @@ namespace BookManage
         {
             SetTextToReader();
             readerBLL.Loss(reader);
-            labinformation.Text = "状态：已挂失！";
+            label14.Text = "状态：已挂失！";
 
 
         }
@@ -140,14 +140,14 @@ namespace BookManage
         {
             SetTextToReader();
             readerBLL.UnLoss(reader);
-            labinformation.Text = "状态：已解除挂失！";
+            label14.Text = "状态：已解除挂失！";
         }
 
         private void btnCancelDoc_Click(object sender, EventArgs e)
         {
             SetTextToReader();
             readerBLL.Delete(reader);
-            labinformation.Text = "状态：已注销！";
+            label14.Text = "状态：已注销！";
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -157,18 +157,18 @@ namespace BookManage
             this.Hide();
         }
 
-        private void btnAddReader_Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e)
         {
             SetTextToReader();
             readerBLL.Insert(reader);
-            labinformation.Text = "状态：办证成功！";
+            label14.Text = "状态：办证成功！";
         }
 
-        private void btnUpdateReader_Click(object sender, EventArgs e)
+        private void button9_Click(object sender, EventArgs e)
         {
             SetTextToReader();
             readerBLL.Update(reader);
-            labinformation.Text = "状态：更改成功！";
+            label14.Text = "状态：更改成功！";
         }
 
         private void btnCancelChange_Click(object sender, EventArgs e)
@@ -178,9 +178,9 @@ namespace BookManage
                 if (ctr1 is TextBox)
                     ctr1.Text = "";
             }
-            cmbSex.Text = "";
-            cmbType.Text = "";
-            cmbDept.Text = "";
+            comboBox1.Text = "";
+            comboBox2.Text = "";
+            comboBox3.Text = "";
         }
 
         private void btnLoadPictureFile_Click(object sender, EventArgs e)
@@ -190,7 +190,7 @@ namespace BookManage
             if (ofd1.ShowDialog() == DialogResult.OK)
             {
                 Image imgPhoto = Image.FromFile(ofd1.FileName);
-                picboxPhoto.Image = imgPhoto;
+                pictureBox1.Image = imgPhoto;
             }
 
         }
@@ -199,43 +199,44 @@ namespace BookManage
         {
             int rdType;
             string rdDept, rdName;
-            if (cmbTypeForQry.Text.Trim() == "")
+            if (toolStripComboBox1.Text.Trim() == "")
             {
                 rdType = 0;
             }
 
             else
             {
-                int i = cmbTypeForQry.Text.IndexOf
+                int i = toolStripComboBox1.Text.IndexOf("--");
             if (i > 0)
                 {
-                    rdType = Convert.ToInt32(cmbTypeForQry.Text.Substring(0, i));
+                    rdType = Convert.ToInt32(toolStripComboBox1.Text.Substring(0, i));
                 }
                 else
                 {
-                    rdType = Convert.ToInt32(cmbTypeForQry.Text);
+                    rdType = Convert.ToInt32(toolStripComboBox1.Text);
                 }
             }
-            rdDept = cmbDeptForQry.Text;
-            rdName = txtNameForQry.Text;
+            rdDept = toolStripComboBox2.Text;
+            rdName = toolStripTextBox1.Text;
             dt = readerBLL.GetReader(rdType, rdDept, rdName);
             ShowData();
 
         }
-        private void dgvReader_CelIContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CelIContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
-        private void cmbDept_SelectedlndexChanged(object sender, EventArgs e)
+        private void comboBox3_SelectedlndexChanged(object sender, EventArgs e)
         {
         }
         private void frmReader_Load(object sender, EventArgs e)
         {
         }
-        private void dgvReader_SelectionChanged(object sender, EventArgs e)
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvReader.CurrentCell == null)
+            if (dataGridView1.CurrentCell == null)
                 return;
-            reader = ReaderAdmin.GetReader((int)dgvReader["rdlD ", dgvReader.CurrentCell.RowIndex].Value);
+            ReaderAdmin admin = new ReaderAdmin();
+            reader = admin.GetReader((int)dataGridView1["rdlD ", dataGridView1.CurrentCell.RowIndex].Value);
             SetReaderToText();
         }
 

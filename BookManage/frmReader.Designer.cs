@@ -48,6 +48,9 @@ namespace BookManage
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -55,7 +58,6 @@ namespace BookManage
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -76,9 +78,7 @@ namespace BookManage
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -237,6 +237,7 @@ namespace BookManage
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.dateTimePicker1);
             this.groupBox2.Controls.Add(this.comboBox3);
             this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Controls.Add(this.comboBox1);
@@ -247,7 +248,6 @@ namespace BookManage
             this.groupBox2.Controls.Add(this.button8);
             this.groupBox2.Controls.Add(this.button7);
             this.groupBox2.Controls.Add(this.pictureBox1);
-            this.groupBox2.Controls.Add(this.textBox9);
             this.groupBox2.Controls.Add(this.textBox10);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label11);
@@ -274,6 +274,30 @@ namespace BookManage
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "读者信息";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(66, 239);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(237, 20);
+            this.comboBox3.TabIndex = 33;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(66, 213);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(237, 20);
+            this.comboBox2.TabIndex = 32;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(66, 102);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(100, 20);
+            this.comboBox1.TabIndex = 31;
             // 
             // label14
             // 
@@ -323,11 +347,11 @@ namespace BookManage
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(203, 179);
+            this.button7.Location = new System.Drawing.Point(189, 179);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.Size = new System.Drawing.Size(100, 23);
             this.button7.TabIndex = 25;
-            this.button7.Text = "button7";
+            this.button7.Text = "图片文件...";
             this.button7.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
@@ -337,13 +361,6 @@ namespace BookManage
             this.pictureBox1.Size = new System.Drawing.Size(100, 150);
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(66, 323);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(237, 21);
-            this.textBox9.TabIndex = 23;
             // 
             // textBox10
             // 
@@ -357,18 +374,18 @@ namespace BookManage
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(12, 243);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(47, 12);
+            this.label10.Size = new System.Drawing.Size(29, 12);
             this.label10.TabIndex = 21;
-            this.label10.Text = "label10";
+            this.label10.Text = "单位";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(13, 271);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(47, 12);
+            this.label11.Size = new System.Drawing.Size(53, 12);
             this.label11.TabIndex = 20;
-            this.label11.Text = "label11";
+            this.label11.Text = "电话号码";
             // 
             // textBox11
             // 
@@ -382,18 +399,18 @@ namespace BookManage
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(13, 298);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(47, 12);
+            this.label12.Size = new System.Drawing.Size(53, 12);
             this.label12.TabIndex = 17;
-            this.label12.Text = "label12";
+            this.label12.Text = "电子邮件";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(13, 327);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(47, 12);
+            this.label13.Size = new System.Drawing.Size(53, 12);
             this.label13.TabIndex = 16;
-            this.label13.Text = "label13";
+            this.label13.Text = "办证日期";
             // 
             // textBox8
             // 
@@ -407,18 +424,18 @@ namespace BookManage
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(13, 188);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(41, 12);
+            this.label8.Size = new System.Drawing.Size(53, 12);
             this.label8.TabIndex = 13;
-            this.label8.Text = "label8";
+            this.label8.Text = "读者角色";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(12, 216);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 12);
+            this.label9.Size = new System.Drawing.Size(53, 12);
             this.label9.TabIndex = 12;
-            this.label9.Text = "label9";
+            this.label9.Text = "读者类别";
             // 
             // textBox5
             // 
@@ -441,16 +458,16 @@ namespace BookManage
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 12);
             this.label6.TabIndex = 9;
-            this.label6.Text = "label6";
+            this.label6.Text = "已借书";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(12, 161);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 12);
+            this.label7.Size = new System.Drawing.Size(53, 12);
             this.label7.TabIndex = 8;
-            this.label7.Text = "label7";
+            this.label7.Text = "证件状态";
             // 
             // textBox4
             // 
@@ -464,18 +481,18 @@ namespace BookManage
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 78);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 12);
+            this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 5;
-            this.label4.Text = "label4";
+            this.label4.Text = "密码";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(12, 106);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 12);
+            this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 4;
-            this.label5.Text = "label5";
+            this.label5.Text = "性别";
             // 
             // textBox2
             // 
@@ -496,42 +513,25 @@ namespace BookManage
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 51);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 12);
+            this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 1;
-            this.label3.Text = "label3";
+            this.label3.Text = "姓名";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 0;
-            this.label2.Text = "label2";
+            this.label2.Text = "借书证号";
             // 
-            // comboBox1
+            // dateTimePicker1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(66, 102);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 20);
-            this.comboBox1.TabIndex = 31;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(66, 213);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(237, 20);
-            this.comboBox2.TabIndex = 32;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(66, 239);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(237, 20);
-            this.comboBox3.TabIndex = 33;
+            this.dateTimePicker1.Location = new System.Drawing.Point(66, 323);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(237, 21);
+            this.dateTimePicker1.TabIndex = 34;
             // 
             // frmReader
             // 
@@ -576,7 +576,6 @@ namespace BookManage
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -607,5 +606,6 @@ namespace BookManage
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
