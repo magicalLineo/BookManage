@@ -186,7 +186,7 @@ namespace BookManage.DAL
             }
             else
             {
-                sql = "select * from Reader where rdType=@rdType and rdDept like @edDept and rdName like @rdName";
+                sql = "select * from Reader where rdType=@rdType and rdDept like @rdDept and rdName like @rdName";
                 SqlParameter[] parameters =
                 {
                     new SqlParameter("@rdType", rdType),

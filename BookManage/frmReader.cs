@@ -37,6 +37,11 @@ namespace BookManage
             }
 
             SetStatus(opStatus.inSelect);
+            UpdateView();
+        }
+
+        private void UpdateView()
+        {
             dt = readerBLL.GetReader(0, "", "");
             ShowData();
         }
@@ -137,6 +142,7 @@ namespace BookManage
             SetTextToReader();
             readerBLL.Insert(reader);
             label14.Text = "状态：办证成功！";
+            UpdateView();
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -144,50 +150,16 @@ namespace BookManage
             SetTextToReader();
             readerBLL.Update(reader);
             label14.Text = "状态：更改成功！";
-        }
-
-        private void btnQuery_Click(object sender, EventArgs e)
-        {
-            int rdType;
-            string rdDept, rdName;
-            if (toolStripComboBox1.Text.Trim() == "")
-            {
-                rdType = 0;
-            }
-
-            else
-            {
-                int i = toolStripComboBox1.Text.IndexOf("--");
-            if (i > 0)
-                {
-                    rdType = Convert.ToInt32(toolStripComboBox1.Text.Substring(0, i));
-                }
-                else
-                {
-                    rdType = Convert.ToInt32(toolStripComboBox1.Text);
-                }
-            }
-            rdDept = toolStripComboBox2.Text;
-            rdName = toolStripTextBox1.Text;
-            dt = readerBLL.GetReader(rdType, rdDept, rdName);
-            ShowData();
-
-        }
-        private void dataGridView1_CelIContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-        private void comboBox3_SelectedlndexChanged(object sender, EventArgs e)
-        {
-        }
-        private void frmReader_Load(object sender, EventArgs e)
-        {
+            UpdateView();
         }
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentCell == null)
+            if (dataGridView1["rdID", dataGridView1.CurrentCell.RowIndex].Value.ToString() == "")
                 return;
             ReaderAdmin admin = new ReaderAdmin();
             reader = admin.GetReader((int)dataGridView1["rdID", dataGridView1.CurrentCell.RowIndex].Value);
+            if (reader == null)
+                return;
             SetReaderToText();
         }
 
@@ -211,6 +183,7 @@ namespace BookManage
             SetTextToReader();
             readerBLL.Loss(reader);
             label14.Text = "状态：已挂失！";
+            UpdateView();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -218,6 +191,7 @@ namespace BookManage
             SetTextToReader();
             readerBLL.UnLoss(reader);
             label14.Text = "状态：已解除挂失！";
+            UpdateView();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -225,6 +199,7 @@ namespace BookManage
             SetTextToReader();
             readerBLL.Delete(reader);
             label14.Text = "状态：已注销！";
+            UpdateView();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -255,6 +230,33 @@ namespace BookManage
                 Image imgPhoto = Image.FromFile(ofd1.FileName);
                 pictureBox1.Image = imgPhoto;
             }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            int rdType;
+            string rdDept, rdName;
+            if (toolStripComboBox1.Text.Trim() == "")
+            {
+                rdType = 0;
+            }
+
+            else
+            {
+                int i = toolStripComboBox1.Text.IndexOf("--");
+                if (i > 0)
+                {
+                    rdType = Convert.ToInt32(toolStripComboBox1.Text.Substring(0, i));
+                }
+                else
+                {
+                    rdType = Convert.ToInt32(toolStripComboBox1.Text);
+                }
+            }
+            rdDept = toolStripComboBox2.Text;
+            rdName = toolStripTextBox1.Text;
+            dt = readerBLL.GetReader(rdType, rdDept, rdName);
+            ShowData();
         }
     }
 }
