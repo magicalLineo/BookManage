@@ -193,7 +193,7 @@ namespace BookManage.DAL
             }
             else
             {
-                sql = "select Borrow.BorrowId, Book.bkID, Book.bkName, Book.bkAuthor, Borrow.IdContinueTimes, Borrow.IdDateOut, Borrow.IdDateRetAct"
+                sql = "select Borrow.BorrowId, Book.bkID, Book.bkName, Book.bkAuthor, Borrow.IdContinueTimes, Borrow.IdDateOut, Borrow.IdDateRetAct "
                     + "from Book, Borrow where Book.bkID=Borrow.bkID and Borrow.rdID=@rdID and Borrow.IsHasReturn=0";
                 SqlParameter[] parameters = { new SqlParameter("@rdID", rdID) };
                 return SqlHelper.GetDataTable(sql, parameters, "Book");
@@ -219,6 +219,14 @@ namespace BookManage.DAL
             SqlParameter[] parameters = { new SqlParameter("@rdID", rdID) };
             return SqlHelper.GetDataTable(sql, parameters, "ReaderType");
         }
+        public static DataTable GetReaderType(int rdType)
+        {
+            string sql = "select CanLendQty,CanLendDay,CanLendDay,CanContinueTimes,PunishRate "
+                + "from ReaderType where rdType=@rdType";
+            SqlParameter[] parameters = { new SqlParameter("@rdType", rdType) };
+            return SqlHelper.GetDataTable(sql, parameters, "ReaderType");
+        }
+
 
         public static DataTable GetrdStatus(int rdID)
         {

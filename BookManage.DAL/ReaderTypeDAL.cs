@@ -7,18 +7,18 @@ namespace BookManage.DAL
 {
     public class ReaderTypeDAL
     {
-        static int Insert(ReaderType readertype) {
+        public static int Insert(ReaderType readertype) {
             int rows = 0;
-            string sql = "insert into ReaderType(rdType, rdTypeName, CanLendQty, CanLendDay, CanContinueTimes, PunishRate, DateVaild) "
+            string sql = "insert into ReaderType(rdType, rdTypeName, CanLendQty, CanLendDay, CanContinueTimes, PunishRate, DateValid) "
                 + "values (@rdType, @rdTypeName, @CanLendQty, @CanLendDay, @CanContinueTimes, @PunishRate, @DateValid)";
             SqlParameter[] parameters = {
-                new SqlParameter("@rdType' ", readertype.rdType),
+                new SqlParameter("@rdType", readertype.rdType),
                 new SqlParameter("@rdTypeName", readertype.rdTypeName),
                 new SqlParameter("@CanLendQty", readertype.CanLendQty),
                 new SqlParameter("@CanLendDay", readertype.CanLendDay),
                 new SqlParameter("@CanContinueTimes", readertype.CanContinueTimes),
                 new SqlParameter("@PunishRate", readertype.PunishRate),
-                new SqlParameter("@DateVaild", readertype.DateVaild)
+                new SqlParameter("@DateValid", readertype.DateValid)
             };
             try {
                 rows = SqlHelper.ExecuteNonQuery(sql, parameters);
@@ -54,7 +54,7 @@ namespace BookManage.DAL
                 + "CanLendDay=@CanLendDay, "
                 + "CanContinueTimes=@CanContinueTimes, "
                 + "PunishRate=@PunishRate, "
-                + "DateValid=@DateValid, "
+                + "DateValid=@DateValid "
                 + "where rdType=@rdType";
             SqlParameter[] parameters ={
                 new SqlParameter ("@rdType",readertype.rdType),
@@ -63,7 +63,7 @@ namespace BookManage.DAL
                 new SqlParameter("@CanLendDay",readertype.CanLendDay),
                 new SqlParameter("@CanContinueTimes",readertype.CanContinueTimes),
                 new SqlParameter("@PunishRate", readertype.PunishRate),
-                new SqlParameter("@DateValid", readertype. DateVaild)
+                new SqlParameter("@DateValid", readertype.DateValid)
             };
             try
             {

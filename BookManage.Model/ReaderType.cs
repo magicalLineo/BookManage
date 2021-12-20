@@ -8,7 +8,7 @@
         public int CanLendDay { get; set; }
         public int CanContinueTimes { get; set; }
         public float PunishRate { get; set; }
-        public int DateVaild { get; set; }
+        public int DateValid { get; set; }
         public ReaderType()
         {
 
@@ -21,7 +21,7 @@
             this.CanLendDay = rt.CanLendDay;
             this.CanContinueTimes = rt.CanContinueTimes;
             this.PunishRate = rt.PunishRate;
-            this.DateVaild = rt.DateVaild;
+            this.DateValid = rt.DateValid;
         }
         public static string ColumnTitle(string columnName)
         {

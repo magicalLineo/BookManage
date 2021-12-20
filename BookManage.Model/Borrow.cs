@@ -44,6 +44,7 @@ namespace BookManage.Model
             sTitle = columnName;
             switch (columnName)
             {
+                case "BorrowId": sTitle = "流水号"; break;
                 case "bkID": sTitle = "图书序号"; break;
                 case "bkName": sTitle = "图书名称"; break;
                 case "bkAuthor": sTitle = "图书作者"; break;
@@ -52,6 +53,7 @@ namespace BookManage.Model
                 case "IdDateRetPlan": sTitle = "应还日期"; break;
                 case "IdOverDay": sTitle = "超期天数"; break;
                 case "IdOverMoney": sTitle = "超期金额"; break;
+                case "IdDateRetAct": sTitle = "借阅状态"; break;
             }
             return sTitle;
         }

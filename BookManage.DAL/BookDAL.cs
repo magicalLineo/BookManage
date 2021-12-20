@@ -10,8 +10,8 @@ namespace BookManage.DAL
         public static int Insert(Book book)
         {
             int rows = 0;
-            string sql = "insert into Book(bkID, bkCode, bkName, bkAuthor, bkPress, bkdatePress, bkISBN, bkCatalog, bkLanguage, bkPages, bkPrice, bkDateIn, bkNum, bkBrief, bkCover, bkStatus) " +
-                "values (@bkID, @bkCode, @bkName, @bkAuthor, @bkPress, @bkdatePress, @bkISBN, @bkCatalog, @bkLanguage, @bkPages, @bkPrice, @bkDateIn, @bkNum, @bkBrief, @bkCover, @bkStatus)";
+            string sql = "insert into Book(bkID, bkCode, bkName, bkAuthor, bkPress, bkDatePress, bkISBN, bkCatalog, bkLanguage, bkPages, bkPrice, bkDateIn, bkNum, bkBrief, bkCover, bkStatus) " +
+                "values (@bkID, @bkCode, @bkName, @bkAuthor, @bkPress, @bkDatePress, @bkISBN, @bkCatalog, @bkLanguage, @bkPages, @bkPrice, @bkDateIn, @bkNum, @bkBrief, @bkCover, @bkStatus)";
             SqlParameter[] parameters =
             {
                 new SqlParameter("@bkID",book.bkID),
@@ -19,7 +19,7 @@ namespace BookManage.DAL
                 new SqlParameter("@bkName",book.bkName),
                 new SqlParameter("@bkAuthor",book.bkAuthor),
                 new SqlParameter("@bkPress",book.bkPress),
-                new SqlParameter("@bkdatePress",book.bkDatePress),
+                new SqlParameter("@bkDatePress",book.bkDatePress),
                 new SqlParameter("@bkISBN",book.bkISBN),
                 new SqlParameter("@bkCatalog",book.bkCatalog),
                 new SqlParameter("@bkLanguage",book.bkLanguage),
@@ -50,7 +50,7 @@ namespace BookManage.DAL
                 + "bkName=@bkName, "
                 + "bkAuthor=@bkAuthor, "
                 + "bkPress=@bkPress, "
-                + "bkdatePress=@bkdatePress, "
+                + "bkDatePress=@bkDatePress, "
                 + "bkISBN=@bkISBN, "
                 + "bkCatalog=@bkCatalog, "
                 + "bkLanguage=@bkLanguage, "
@@ -69,7 +69,7 @@ namespace BookManage.DAL
                 new SqlParameter("@bkName",book.bkName),
                 new SqlParameter("@bkAuthor",book.bkAuthor),
                 new SqlParameter("@bkPress",book.bkPress),
-                new SqlParameter("@bkdatePress",book.bkDatePress),
+                new SqlParameter("@bkDatePress",book.bkDatePress),
                 new SqlParameter("@bkISBN",book.bkISBN),
                 new SqlParameter("@bkCatalog",book.bkCatalog),
                 new SqlParameter("@bkLanguage",book.bkLanguage),
