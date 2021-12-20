@@ -73,7 +73,7 @@ namespace BookManage.DAL
             string sql = "update Borrow set "
                 + "IdContinueTimes=@IdContinueTimes+1, "
                 + "IdDateOut=@IdDateOut, "
-                + "IdDateRetPaln=@IdDateRetPlan "
+                + "IdDateRetPlan=@IdDateRetPlan "
                 + "where BorrowId=@BorrowId";
             SqlParameter[] parameters =
             {
@@ -96,7 +96,7 @@ namespace BookManage.DAL
         {
             int rows = 0;
             string sql = "update Borrow set "
-                + "IdContinueTimes=0. "
+                + "IdContinueTimes=0, "
                 + "IdDateRetAct=@IdDateRetAct, "
                 + "IdOverDay=@IdOverDay, "
                 + "IdOverMoney=@IdOverMoney, "

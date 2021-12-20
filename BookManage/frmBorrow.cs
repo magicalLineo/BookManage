@@ -176,14 +176,8 @@ namespace BookManage
             Borrow borrow = new Borrow();
             DataRow dr = null;
             DataRow ds = null;
-            for (int i = 0; i < dgvBorrow.SelectedRows.Count; i++)
-            {
-                dr = (dgvBorrow.SelectedRows[i].DataBoundItem as DataRowView).Row;
-            }
-            for (int j = 0; j < dgvReader.SelectedRows.Count; j++)
-            {
-                ds = (dgvReader.SelectedRows[j].DataBoundItem as DataRowView).Row;
-            }
+            dr = (dgvBorrow.CurrentRow.DataBoundItem as DataRowView).Row;
+            ds = (dgvReader.CurrentRow.DataBoundItem as DataRowView).Row;
             rdType = Convert.ToInt32(ds.ItemArray[3]);
             dt = borrowBLL.GetReaderType(rdType);
             CanLendDay = Convert.ToInt32(dt.Rows[0][1]);
@@ -212,14 +206,8 @@ namespace BookManage
             Borrow borrow = new Borrow();
             DataRow dr = null;
             DataRow ds = null;
-            for (int i = 0; i < dgvBorrow.SelectedRows.Count; i++)
-            {
-                dr = (dgvBorrow.SelectedRows[i].DataBoundItem as DataRowView).Row;
-            }
-            for (int j = 0; j < dgvReader.SelectedRows.Count; j++)
-            {
-                ds = (dgvReader.SelectedRows[j].DataBoundItem as DataRowView).Row;
-            }
+            dr = (dgvBorrow.CurrentRow.DataBoundItem as DataRowView).Row;
+            ds = (dgvReader.CurrentRow.DataBoundItem as DataRowView).Row;
             rdType = Convert.ToInt32(ds.ItemArray[3]);
             dt = borrowBLL.GetReaderType(rdType);
             PunishRate = Convert.ToSingle(dt.Rows[0][3]);
